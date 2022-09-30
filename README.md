@@ -1,12 +1,11 @@
 # hacktoberfet-2022
+
 https://hacktoberfest.com
-this repo is for DSA and Operating System code codes 
+This repo is meant to contain the algorithms for DSA and Operating System codes in C++ language.
 
 ![hacktoberfet-2022g](https://user-images.githubusercontent.com/60610128/193233241-0ed224b3-d193-4fd0-9ecc-8420621c0029.png)
 
-# hacktoberfet-2022
 
-This repo is meant to contain the algorithms for DSA and Operating System codes in C++ language.
 
 
 - These algorithms can be used to organize complicated data and make it easier to use as well as to understand. Furthermore, having an understanding of these algorithms and how they work is fundamental for a strong understanding the *concepts of Computer Science*
