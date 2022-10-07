@@ -12,15 +12,15 @@ b=temp;
 int main()
 {
     int n,i,j;
-    cout<<"enter no of processes:";
+    cout<<"Enter number of processes: ";
     cin>>n;
     int bt[n],p[n],wt[n],tt[n],pr[n];
-    cout<<"enter burst time of each process:";
+    cout<<"Enter burst time of each process: ";
     for (i=0;i<n;i++)
     {
         cin>>bt[i];
     }
-    cout<<"enter priority of each process:";
+    cout<<"Enter priority of each process: ";
     for (i=0;i<n;i++)
     {
         cin>>pr[i];
@@ -42,7 +42,7 @@ int main()
         }
     }
     wt[0]=0;
-    cout<<"waiting time of each process is:";
+    cout<<"Waiting time of each process is: ";
     for(i=1;i<n;i++)
     {
         wt[i]=wt[(i-1)]+bt[(i-1)];
@@ -72,6 +72,6 @@ int main()
     }
     avgwt=avgwt/n;
     avgtt=avgtt/n;
-    cout<<"\n\n average waiting time:"<<avgwt;
-    cout<<"\n average turn around time:"<<avgtt;
+    cout<<"\n\n Average waiting time: "<<avgwt;
+    cout<<"\n Average turn around time: "<<avgtt;
 }
