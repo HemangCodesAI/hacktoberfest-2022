@@ -1,47 +1,60 @@
-#include<iostream>
+#include <iostream>
+#include <conio.h>
 using namespace std;
-int main()
-{
-    int bt[10],wt[10],i,tt[10],n;
-    cout<<"enter no of processes:";
-    cin>>n;
-    cout<<"enter burst time of each process:";
-    for (i=0;i<n;i++)
+int main(){
+    int pnum,i,j,avgturn,avgwait;
+    cout<<"Enter the number of processes: ";
+    cin>>pnum;
+    int x[pnum],test[pnum],turntime[pnum],waiting[pnum],arrival[pnum];
+    int temp1=0,temp2=0,temp3=0,temp4=0,temp5=0,temp6=0,tempturn=0,tempwait=0;
+    waiting[0]=0;
+    cout<<"Enter the process time for each process: ";
+    for (i=0;i<pnum;i++)
     {
-        cin>>bt[i];
+        cin>>x[i];
+        test[i]=i+1;
     }
-    wt[0]=0;
-    cout<<"waiting time of each process is:";
-    for(i=1;i<n;i++)
+    cout<<"Enter the arrival time for each process: ";
+    for (i=0;i<pnum;i++)
     {
-        wt[i]=wt[(i-1)]+bt[(i-1)];
+        cin>>arrival[i];
     }
-    for(i=0;i<n;i++)
+    for(i=0;i<pnum;i++)
     {
-        cout<<"\nwt["<<i<<"] :"<<wt[i];
+        for(j=i+1;j<pnum;j++)
+        {
+            if(arrival[i]>arrival[j])
+            {
+                temp4=x[i];
+                x[i]=x[j];
+                x[j]=temp4;
+                temp1=arrival[i];
+                arrival[i]=arrival[j];
+                arrival[j]=temp1;
+                temp2=test[i];
+                test[i]=test[j];
+                test[j]=temp2;
+            }
+        }
     }
-    for(i=0;i<n;i++)
+    for (i=0;i<pnum;i++)
     {
-        tt[i]=wt[i]+bt[i];
+        temp3=temp3+x[i];
+        turntime[i]=temp3-arrival[i];
+        temp4+=x[i];
+        waiting[i+1]=turntime[i]-arrival[i];
     }
-    for(i=0;i<n;i++)
+    for (i=0;i<pnum;i++)
     {
-        cout<<"\ntt["<<i<<"]  :"<<tt[i];
-        
+        tempturn=+turntime[i];
+        tempwait=+waiting[i];
     }
-    cout<<"\n\n process\tburst time\twaiting time\tturn around time";
-    for(i=0;i<n;i++)
+    avgturn=tempturn/pnum;
+    avgwait=tempwait/pnum;
+    cout<<"process\t\tcpuburst\tarrival\tturnaround\twaiting\n";
+    for (int i=0;i<pnum;i++)
     {
-        cout<<"\n"<<i+1<<"\t\t"<<bt[i]<<"\t\t"<<wt[i]<<"\t\t"<<tt[i];
+        cout<<"p"<<test[i]<<"\t\t"<<x[i]<<"\t\t"<<arrival[i]<<"\t\t"<<turntime[i]<<"\t\t"<<waiting[i]<<"\n";
     }
-    float avgwt=0,avgtt=0;
-    for(i=0;i<n;i++)
-    {
-        avgwt=avgwt+wt[i];
-        avgtt=avgtt+tt[i];
-    }
-    avgwt=avgwt/n;
-    avgtt=avgtt/n;
-    cout<<"\n\n average waiting time:"<<avgwt;
-    cout<<"\n average turn around time:"<<avgtt;
+    cout<<"Average waiting time: "<<avgwait<<"\n"<<"Average Turnaround time: "<<avgturn<<"\n";
 }
