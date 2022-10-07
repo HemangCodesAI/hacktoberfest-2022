@@ -2,16 +2,17 @@
 using namespace std;
 int main()
 {
-    int bt[10],wt[10],i,tt[10],n;
+    int n;
     cout<<"enter no of processes:";
     cin>>n;
-    cout<<"enter burst time of each process:";
+    int bt[n],wt[n],i,tt[n];
+    cout<<"Enter burst time of each process:";
     for (i=0;i<n;i++)
     {
         cin>>bt[i];
     }
     wt[0]=0;
-    cout<<"waiting time of each process is:";
+    cout<<"Waiting time of each process is:";
     for(i=1;i<n;i++)
     {
         wt[i]=wt[(i-1)]+bt[(i-1)];
@@ -29,7 +30,7 @@ int main()
         cout<<"\ntt["<<i<<"]  :"<<tt[i];
         
     }
-    cout<<"\n\n process\tburst time\twaiting time\tturn around time";
+    cout<<"\n\n Process\tBurst Time\tWaiting Time\tTurn Around Time";
     for(i=0;i<n;i++)
     {
         cout<<"\n"<<i+1<<"\t\t"<<bt[i]<<"\t\t"<<wt[i]<<"\t\t"<<tt[i];
@@ -42,6 +43,6 @@ int main()
     }
     avgwt=avgwt/n;
     avgtt=avgtt/n;
-    cout<<"\n\n average waiting time:"<<avgwt;
-    cout<<"\n average turn around time:"<<avgtt;
+    cout<<"\n\n Average waiting time: "<<avgwt;
+    cout<<"\n Average turn around time: "<<avgtt;
 }
