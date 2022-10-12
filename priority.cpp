@@ -1,4 +1,4 @@
-
+//Write a program to demonstrate priority scheduling algorithm
 #include<iostream>
 #include<conio.h>
 using namespace std;
