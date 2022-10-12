@@ -2,7 +2,7 @@
 
 https://hacktoberfest.com       
 
-This repo is meant to contain the algorithms for DSA and Operating System codes in C++ language.
+This repo is meant to contain the algorithms for DSA and CPU scheduling codes in C++ language.
 
 ![hacktoberfest-2022g](https://user-images.githubusercontent.com/60610128/193233241-0ed224b3-d193-4fd0-9ecc-8420621c0029.png)
 
