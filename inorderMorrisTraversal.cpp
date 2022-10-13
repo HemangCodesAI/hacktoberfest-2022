@@ -1,4 +1,10 @@
 /**
+ * Morris Traversal: Using Morris Traversal, we can traverse the tree without using stack and recursion. The idea of Morris Traversal is based on Threaded Binary Tree. In this traversal, we first create links to Inorder successor and print the data using these links, and finally revert the changes to restore original tree. 
+ */
+
+
+
+/**
  * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
