@@ -1,0 +1,59 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main(){
+
+int t;
+cin>>t;
+int R[t][1001];
+ for(int i=1;i<=t;i++){
+
+    int n,k,r;
+    int A[1001];
+    cin>>n>>k;
+
+    if(n%2==0){
+      for(int j=1;j<=n;j++){
+        A[j]= pow(-1,j)*j;
+      }
+      
+      }
+	  else  {
+	   for( int j=1;j<=n;j++ ){
+        A[j]= pow(-1,(j-1))*j;
+          
+      } 
+ } 
+ 
+  if(n==k){
+  	for(int l=1;l<=n;l++){
+  		A[l]=l;	
+	  }	 
+  } else if(k<=(n/2)){
+        int u;
+		u=((n+1)/2-k) 	;
+		
+  	for(int l=n;l>n-(2*u);l--){
+  		
+  	       A[l]=-abs(A[l]) ; 
+  	
+	  }
+	  
+} else if(k>(n/2)){
+	int u;
+		u=( k-(n+1)/2) ;
+			for(int l=n;l>n-(2*u);l--){
+  		   
+  	       A[l]=abs(A[l]) ; 
+	  }	
+}
+
+ for(int m=1;m<=n;m++){
+ 	
+cout<<A[m]<<" ";
+ }
+}
+  return 0;
+}
