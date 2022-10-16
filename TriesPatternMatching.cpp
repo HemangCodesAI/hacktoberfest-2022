@@ -1,3 +1,21 @@
+// Given a list of n words and a pattern p that we want to search. Check if the pattern p is present the given words or not. Return true if the pattern is present and false otherwise.
+
+// Input Format :
+// The first line of input contains an integer, that denotes the value of n.
+// The following line contains n space separated words.
+// The following line contains a string, that denotes the value of the pattern p.
+
+// Output Format :
+// The first and only line of output contains true if the pattern is present and false otherwise.
+
+// Input:
+// 4
+// abc def ghi cba
+// de
+
+// Output:
+// true
+
 #include <iostream>
 #include <vector>
 using namespace std;
