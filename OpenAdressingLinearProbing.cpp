@@ -1,4 +1,6 @@
-/*Implementaion of Open Adressing with Linear Probing*/
+/* Standard Implementation of Hash Table through Open Addressing method using linear probing*/
+/* this code contains the simple implementation of handling collison occured while inserting value in a hash table ,these collison can be handled using open adressing's
+   linear probing method. */
 
 #include<bits/stdc++.h>
 #define ll long long 
