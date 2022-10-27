@@ -1,37 +1,42 @@
-//Selection Sort
 #include <iostream>
 using namespace std;
 
-void SelectionSort(int *arr, int size){
-    int i, j, temp;
-    for(i=0; i<size-1; i++){
-        for(j=i+1; j<size; j++){
-            if(arr[i] > arr[j]){
-                temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-    }
+// function to swap the the position of two elements
+void swap(int *a, int *b) {
+  int temp = *a;
+  *a = *b;
+  *b = temp;
 }
 
-void Display(int *arr, int size){
-    cout<<"Sorted Array: ";
-    int i=0;
-    while(i<size){
-        cout<<arr[i++]<<" ";
-    }
+// function to print an array
+void printArray(int array[], int size) {
+  for (int i = 0; i < size; i++) {
+    cout << array[i] << " ";
+  }
+  cout << endl;
 }
 
-int main(){
-    int i, size;
-    cout<<"Enter the size: "; cin>>size;
-    int *arr = new int[size];
-    cout<<"Enter "<<size<<" elements: ";
-    for(i=0; i<size; i++){
-        cin>>arr[i];
+void selectionSort(int array[], int size) {
+  for (int step = 0; step < size - 1; step++) {
+    int min_idx = step;
+    for (int i = step + 1; i < size; i++) {
+
+      // To sort in descending order, change > to < in this line.
+      // Select the minimum element in each loop.
+      if (array[i] < array[min_idx])
+        min_idx = i;
     }
-    SelectionSort(arr,size);
-    Display(arr,size);
-    return 0;
+
+    // put min at the correct position
+    swap(&array[min_idx], &array[step]);
+  }
+}
+
+// driver code
+int main() {
+  int data{20, 12, 10, 15, 2};
+  int size = sizeof(data) / sizeof(data[0]);
+  selectionSort(data, size);
+  cout << "Sorted array in Acsending Order:\n";
+  printArray(data, size);
 }
